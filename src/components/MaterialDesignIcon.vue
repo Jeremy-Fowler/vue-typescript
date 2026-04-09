@@ -3,7 +3,8 @@
 
 defineProps({
   icon: { type: String, required: true },
-  spin: { type: Boolean, default: false }
+  spin: { type: Boolean, default: false },
+  height: { type: Number, default: 1.5 }
 })
 </script>
 
@@ -17,7 +18,7 @@ defineProps({
 
 <style scoped lang="scss">
 svg {
-  height: 1.5rem;
+  height: v-bind("height + 'rem'");
   aspect-ratio: 1/1;
 }
 
