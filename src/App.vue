@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useAuth0 } from '@auth0/auth0-vue'
+import MaterialDesignIcon from './components/MaterialDesignIcon.vue'
+import { mdiCat } from '@mdi/js'
+
 
 const {
   isLoading,
@@ -17,6 +20,9 @@ const login = () => loginWithRedirect()
 
 const logout = () =>
   auth0Logout({ logoutParams: { returnTo: window.location.origin } })
+
+
+
 </script>
 
 <template>
@@ -26,6 +32,8 @@ const logout = () =>
     <p>Logged in as {{ user.email }}</p>
 
     <h1>User Profile</h1>
+
+    <MaterialDesignIcon :icon="mdiCat" class="text-danger" />
 
     <pre>{{ JSON.stringify(user, null, 2) }}</pre>
 
