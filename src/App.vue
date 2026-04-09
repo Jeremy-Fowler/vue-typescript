@@ -1,52 +1,43 @@
 <script setup lang="ts">
-import { useAuth0 } from '@auth0/auth0-vue'
-import MaterialDesignIcon from './components/MaterialDesignIcon.vue'
-import { mdiCat } from '@mdi/js'
-
-
-const {
-  isLoading,
-  isAuthenticated,
-  error,
-  loginWithRedirect,
-  logout: auth0Logout,
-  user
-} = useAuth0()
-
-const signup = () =>
-  loginWithRedirect({ authorizationParams: { screen_hint: 'signup' } })
-
-const login = () => loginWithRedirect()
-
-const logout = () =>
-  auth0Logout({ logoutParams: { returnTo: window.location.origin } })
+import { mdiGithub } from '@mdi/js';
+import MaterialDesignIcon from './components/MaterialDesignIcon.vue';
 
 
 
 </script>
 
 <template>
-  <div v-if="isLoading">Loading...</div>
+  <header class="border-bottom border-1 border-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between py-2">
+            <RouterLink :to="{ name: 'Home' }">
+              Home
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <div v-else-if="isAuthenticated && user">
-    <p>Logged in as {{ user.email }}</p>
+  <main>
+    <RouterView />
+  </main>
 
-    <h1>User Profile</h1>
-
-    <MaterialDesignIcon :icon="mdiCat" class="text-danger" />
-
-    <pre>{{ JSON.stringify(user, null, 2) }}</pre>
-
-    <button @click="logout">Logout</button>
-  </div>
-
-  <div v-else>
-    <p v-if="error">Error: {{ error.message }}</p>
-
-    <button @click="signup">Signup</button>
-
-    <button @click="login">Login</button>
-  </div>
+  <footer class="border-top border-1 border-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center py-2">
+            <a href="https://github.com/jeremy-fowler" target="_blank" title="Check out my github!">
+              <MaterialDesignIcon :icon="mdiGithub" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style lang="scss"></style>
