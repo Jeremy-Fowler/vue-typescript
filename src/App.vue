@@ -40,3 +40,5 @@ const logout = () =>
     <button @click="login">Login</button>
   </div>
 </template>
+
+<style lang="scss"></style>

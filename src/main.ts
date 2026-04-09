@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import { createAuth0 } from '@auth0/auth0-vue'
+import '@/assets/style.scss'
 
 const app = createApp(App)
 
