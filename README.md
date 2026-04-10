@@ -56,7 +56,6 @@ Paste the following code into into the `.env.local` file:
 ```
 VITE_AUTH0_DOMAIN=
 VITE_AUTH0_CLIENT_ID=
-PORT=5173
 ```
 
 Paste your respective values from Auth0 for the `Domain` and `Client Id` keys.

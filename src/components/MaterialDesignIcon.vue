@@ -1,26 +1,39 @@
 <script setup lang="ts">
-defineProps({
+import { computed, useTemplateRef } from 'vue';
+
+const { size } = defineProps({
   icon: { type: String, required: true },
   spin: { type: Boolean, default: false },
-  height: { type: Number, default: 1.5 },
-  // TODO this sucks
-  color: { type: String, default: 'dark' },
-  stroke: { type: String }
+  stroke: { type: String },
+  // TODO maybe compute this to find text size of ancestor?
+  size: { type: [String, Number], default: 24 }
 })
+
+const svg = useTemplateRef('svg')
+
+const fontColor = computed(() => {
+  if (!svg.value) return ''
+  const styles = window.getComputedStyle(svg.value)
+  return styles.color
+})
+
 </script>
 
 
 <template>
-  <svg :class="{ spin }">
-    <path :d="icon" :fill="`var(--bs-${color})`" :stroke="stroke ? `var(--bs-${stroke})` : ''" />
+  <svg :class="{ spin }" ref="svg" :height="size" :width="size" viewBox="0 0 24 24">
+    <path :d="icon" :stroke="stroke ? `var(--bs-${stroke})` : ''" />
   </svg>
 </template>
 
 
 <style scoped lang="scss">
 svg {
-  height: v-bind("height + 'rem'");
-  aspect-ratio: 1/1;
+  height: 100%
+}
+
+path {
+  fill: v-bind('fontColor');
 }
 
 .spin {

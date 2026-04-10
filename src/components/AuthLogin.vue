@@ -26,7 +26,7 @@ const logout = () =>
 
 <template>
   <div v-if="isLoading" title="Loading...">
-    <MaterialDesignIcon :icon="mdiLoading" spin :height="2.5" />
+    <MaterialDesignIcon :icon="mdiLoading" spin size="40" />
   </div>
 
   <div v-else-if="isAuthenticated && user" class="dropdown">

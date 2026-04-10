@@ -32,7 +32,7 @@ import AuthLogin from './components/AuthLogin.vue';
       <div class="row">
         <div class="col-12">
           <div class="text-center py-2">
-            <a href="https://github.com/jeremy-fowler" target="_blank" title="Check out my github!">
+            <a href="https://github.com/jeremy-fowler" target="_blank" title="Check out my github!" class="github-link">
               <MaterialDesignIcon :icon="mdiGithub" />
             </a>
           </div>
@@ -42,4 +42,9 @@ import AuthLogin from './components/AuthLogin.vue';
   </footer>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.github-link {
+  text-decoration: none;
+  color: unset;
+}
+</style>
