@@ -4,14 +4,15 @@ defineProps({
   spin: { type: Boolean, default: false },
   height: { type: Number, default: 1.5 },
   // TODO this sucks
-  color: { type: String, default: 'dark' }
+  color: { type: String, default: 'dark' },
+  stroke: { type: String }
 })
 </script>
 
 
 <template>
   <svg :class="{ spin }">
-    <path :d="icon" :fill="`var(--bs-${color})`" />
+    <path :d="icon" :fill="`var(--bs-${color})`" :stroke="stroke ? `var(--bs-${stroke})` : ''" />
   </svg>
 </template>
 

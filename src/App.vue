@@ -12,7 +12,7 @@ import AuthLogin from './components/AuthLogin.vue';
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="d-flex justify-content-between py-2">
+          <div class="d-flex justify-content-between align-items-center py-2">
             <RouterLink :to="{ name: 'Home' }">
               Home
             </RouterLink>
