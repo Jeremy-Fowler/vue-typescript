@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { mdiGithub } from '@mdi/js';
 import MaterialDesignIcon from './components/MaterialDesignIcon.vue';
+import AuthLogin from './components/AuthLogin.vue';
 
 
 
@@ -15,6 +16,7 @@ import MaterialDesignIcon from './components/MaterialDesignIcon.vue';
             <RouterLink :to="{ name: 'Home' }">
               Home
             </RouterLink>
+            <AuthLogin />
           </div>
         </div>
       </div>

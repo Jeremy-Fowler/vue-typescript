@@ -2,14 +2,16 @@
 defineProps({
   icon: { type: String, required: true },
   spin: { type: Boolean, default: false },
-  height: { type: Number, default: 1.5 }
+  height: { type: Number, default: 1.5 },
+  // TODO this sucks
+  color: { type: String, default: 'dark' }
 })
 </script>
 
 
 <template>
   <svg :class="{ spin }">
-    <path :d="icon" />
+    <path :d="icon" :fill="`var(--bs-${color})`" />
   </svg>
 </template>
 

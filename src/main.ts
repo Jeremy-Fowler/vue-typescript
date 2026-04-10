@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
+import '@popperjs/core'
+import 'bootstrap'
 import App from './App.vue'
 import router from './router'
 import { createAuth0 } from '@auth0/auth0-vue'

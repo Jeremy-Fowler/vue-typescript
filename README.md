@@ -46,3 +46,19 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## File creation for Auth0
+
+Create a file named `.env.local` in the root folder of your project.
+
+Paste the following code into into the `.env.local` file:
+
+```
+VITE_AUTH0_DOMAIN=
+VITE_AUTH0_CLIENT_ID=
+PORT=5173
+```
+
+Paste your respective values from Auth0 for the `Domain` and `Client Id` keys.
+
+Make sure you add `http://localhost:5173` to your Auth0 application settings under `Allowed Callback URLs`, `Allowed Logout URLs`, and `Allowed Web Origins`
